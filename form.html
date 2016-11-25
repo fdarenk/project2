@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta сharset="utf-8">
+	<title>Анкета</title>
+<link rel="stylesheet" type="text/css" href="static/style.css">
+</head>
+<body class="body">
+<div class="header" align="center">Анкета</div><br><br><br>
+<div class="text" align="left">
+<form name="data" action="" method="get">
+Имя переводчика:<input type="text" name="name"><br><br>
+Пол переводчика: 
+	<input type="radio" name="gender" value="м"> м 
+	<input type="radio" name="gender" value="ж"> ж <br><br>
+Возраст переводчика:<input type="number" name="age"> (Вписать числом)<br><br><br>
+	{% for quest, field in fields.items() %}
+		<li>{{ quest }}: <input type="text" name="{{ field }}"></li>
+	{% endfor %}
+	<br><input type="submit" value="Отправить"><br>(Все поля должны быть заполнены)
+</form>
+</div>
+</body>
+</html>

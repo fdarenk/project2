@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Результаты опроса</title>
+<link rel="stylesheet" type="text/css" href="static/style.css">
+</head>
+<body class="body">
+<div class="header" align="center">Результаты опроса</div><br><br><br>
+<div class="text" align="left">
+Средний возраст переводчиков: {{ average }}<br>
+Соотношение мужчин и женщин среди переводчиков: {{ genders }}<br><br>
+Для каждого вопроса приведены все встретившиеся ответы в порядке убывания их популярности. Варианты ответов сопровождаются числом переводчиков, давших эти ответы.<br><br>
+	{% for question in answers %}
+		'{{ question[0] }}' :<br>
+		{% for answer in question[1]: %}
+			{{ answer[0] }} — {{ answer[1] }}<br>
+		{% endfor %}
+	<br>
+	{% endfor %}
+</div>
+</body>
+</html>

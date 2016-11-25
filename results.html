@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Найденные ответы</title>
+	<link rel="stylesheet" type="text/css" href="static/style.css">
+</head>
+<body class="body">
+<div class="header" align="center">Найденные ответы</div><br><br><br>
+<div class="text" align="left">
+Ответы респондентов по имени {{ name }}:<br><br>
+{% for resp in found %}
+	{{ resp[0] }}, {{ resp[1] }}, {{ resp[2] }}:<br>
+	{% for numans in range(3, length) %}
+		'{{ fields[numans - 3] }}' — {{ resp[numans]}}<br>
+	{% endfor %}
+	<br>
+{% endfor %}
+</div>
+</body>
+</html>
